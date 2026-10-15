@@ -1,0 +1,45 @@
+-- notice format, we intend with code blocks, the 
+-- code inside the if then stament is a "code block"
+
+local part = script.Parent
+local x = part.Size.X
+local y = part.Size.Y
+local z = part.Size.Z
+
+print("the x length of the part = ", x)
+print("the y length of the part = ", y)
+print("the z length of the part = ", z)
+
+-- CODE BLOCK FORMATTING: Script -> Formatting -> Select Document
+if x == 4 then
+	print("x is a good size")
+end
+
+-- and: both must be true
+if x == 4 and y == 1 then
+	print("x and y are a good sizes")
+end
+
+-- or:  one must be true
+if x == 4 or y ~= 1 then
+	print("x or y are a good sizes")
+end
+
+--  add and else
+if x == 4 and y == 1 then
+	print("x or y are a good sizes")
+else
+	print("x or y was not an OG size")
+end
+
+-- elseif (remember first true statement is the only one that fires)
+if x == 4 and y == 1 then
+	print("x or y are a good sizes")
+elseif x == 4 then
+	print("x is OG")
+elseif y == 1 then
+	print("y is OG")
+else
+	print("x or y was not an OG size")
+end
+

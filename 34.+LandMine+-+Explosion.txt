@@ -1,0 +1,23 @@
+local plate = script.Parent
+local landmine = plate.Parent
+local canExplode = true
+local debris = game:GetService("Debris")
+local snd = plate.Explosion
+local surface = workspace.Terrain
+
+local function onTouch(otherPart)
+	if otherPart ~= surface and canExplode then
+		print("surface", surface)
+		canExplode = false
+		local exp = Instance.new("Explosion", plate)
+		exp.Position = plate.Position
+		exp.BlastPressure = 500000
+		exp.BlastRadius = 5
+		exp.ExplosionType = Enum.ExplosionType.NoCraters
+		snd:Play()
+		plate.Transparency = 1
+		debris:AddItem(landmine, 2)
+	end 
+end
+
+plate.Touched:Connect(onTouch)
